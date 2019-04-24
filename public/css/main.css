@@ -2762,3 +2762,202 @@ h6 {
 .switch-wrap p {
   margin: 0;
 }
+/* Container for 2 child elements (button & filename) */
+.fileUpload {
+    background: #fff;
+    border: 0;
+    display: block;
+    margin: 2% 0 5% 0;
+    width: 100%;
+    /* border radius */
+    -o-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+/* The button */
+.fileUpload .fileBtn {
+    background: #2C88D6;
+    cursor: pointer;
+    float: left;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 3% 0;
+    text-align: center;
+    width: 33%;
+    /* border radius */
+    -o-border-radius: 6px 0 0 6px;
+    -moz-border-radius: 6px 0 0 6px;
+    -webkit-border-radius: 6px 0 0 6px;
+    border-radius: 6px 0 0 6px;
+}
+.fileUpload .fileBtn:hover {
+    background: #2C4356;
+}
+/* Where the input-name will be filled in */
+.fileUpload .fileName {
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 67%;
+    text-align: center;
+    color: #000;
+    padding: 3% 0;
+}
+/* Animation (hover) */
+.fileUpload .fileBtn:hover {
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-property: background;
+    -moz-transition-duration: 0.4s;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-property: background;
+    -o-transition-duration: 0.4s;
+    -o-transition-timing-function: ease-in;
+    -ms-transition-property: background;
+    -ms-transition-duration: 0.4s;
+    -ms-transition-timing-function: ease-in;
+    transition-property: background;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+/* Clear input-parent, due to child-floats */
+.fileUpload:after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.uploadButton {
+  display: block;
+  width: 280px;
+  background: #3df;
+  padding: 3px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Tahoma;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.uploadButton:hover {
+  background: #3ce;
+}
+.botom_mg{
+ margin-top: -12px;
+}
+.form_border{
+  width: 60%;
+ border :5px solid rgba(255, 255, 255, 0.43);
+  border-radius: 6px;
+  padding-top: 20px;
+margin-top: 50px;
+  padding-bottom: 20px;
+}
+.form-title{
+  margin-bottom: 8px;
+}
+.blog-div{
+
+  position:relative;margin-top:890px
+}
+.breadcrumb{
+  font-size: 18px;
+}
+.category-info{
+  font-size: 18px;
+  color:#000;
+  margin-left: 12px;
+  margin-top: -8px;
+}
+.name_title{
+
+  color: rgba(164, 188, 182, 0.56);
+}
+.title_name{
+
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  margin-left: 13px;
+  border-bottom: 1px solid  rgba(164, 188, 182, 0.56);
+
+}
+
+#share {
+  width: 100%;
+  margin: 100px auto;
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* buttons */
+
+#share a {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 1px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #fff;
+  opacity: 0.75;
+  transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+  opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+  background: #3b5998;
+}
+
+.twitter {
+  background: #55acee;
+}
+
+.googleplus {
+  background: #dd4b39;
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.pinterest {
+  background: #cb2027;
+}
+.map-title{
+  font-size: 20px;
+  text-transform: uppercase;
+  color:#000;
+  text-align: center;
+  margin-left: 12px;
+  margin-top: 112px;
+}
+.info-block{
+ margin-top: 120px;
+  text-align: center;
+}
+
+.gallery-name{
+  font-size: 20px;
+  border-bottom: 1px solid rgba(164, 188, 182, 0.56);;
+color: #878787;
+}

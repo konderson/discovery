@@ -16,3 +16,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','MainController@index');
+
+Route::get('/addroute',"PostController@index");
+Route::post('/addroute',"PostController@createPost")->name('addpost');
+
+Route::get('/publish/category/{id}/','PublishController@getByCategory');
+Route::get('/publish/detal/{id}','PublishController@detalPublic');
+Route::post('/addlike','InfoController@addLike')->name('addlike');
+
+

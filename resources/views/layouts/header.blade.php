@@ -5,8 +5,8 @@
     <header class="default-header">
         <nav class="navbar navbar-expand-lg  navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.png" alt="">
+                <a class="navbar-brand" href="/">
+                    <img src="{{asset('img/logo.png')}}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="text-white lnr lnr-menu"></span>
@@ -18,7 +18,7 @@
 
                         <li><a href="#secvice">Рекомендуемые места</a></li>
                         <li><a href="#gallery">Галерея</a></li>
-                        <li><a href="#about">Создать маршрут</a></li>
+                        <li><a href="/addroute">Создать маршрут</a></li>
                         <li><a href="#about">О проекте</a></li>
 
                         <!-- Dropdown -->

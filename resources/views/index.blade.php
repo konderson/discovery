@@ -44,7 +44,7 @@
                         <h4 class="text-white mb-20 text-uppercase">Баары үчүн ачык Кыргызстан</h4>
                         <h1 class="text-uppercase text-white">#разнообразие KG </h1>
                         <p class="text-white text-bottom">Кыргызстан разнообразная странна, с богатой историей ,многообразной культурой .Открой для себе кулинарный мир.
-                            Сегодня гастрономический туризм — невероятно модное увлечение; путешественники отправляются в путь, чтобы отведать традиционные блюда и местные продукты.</
+                            Сегодня гастрономический туризм — невероятно модное увлечение; путешественники отправляются в путь, чтобы отведать традиционные блюда и местные продукты
                         </p>
                         <a href="#" class="text-uppercase header-btn">список маршрутов</a>
                     </div>
@@ -107,41 +107,18 @@
         </div>
         <div class="row justify-content-center d-flex">
             <div class="active-works-carousel mt-40 col-lg-8">
+                @foreach($publication as $publ)
                 <div class="item">
-                    <img class="img-fluid" src="img/why.jpg" alt="">
+                    <img  style="width: 700px;height: 350px" src="img/new/{{\App\Publish::getImg($publ->img)}}" alt="">
                     <div class="caption text-center mt-20">
-                        <h6 class="text-uppercase">Vector Illustration</h6>
-                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
+                        <h6 class="text-uppercase">{{$publ->title}}</h6>
+
+                        <p>{{\App\Publish::subDescript($publ->descriotion)}}</p>
+                        <center><a  style="margin-top: 15px"href="#" class="btn btn-primary">Подробнее &rarr;</a></center>
                     </div>
                 </div>
-                <div class="item">
-                    <img class="img-fluid" src="img/why.jpg" alt="">
-                    <div class="caption text-center mt-20">
-                        <h6 class="text-uppercase">Vector Illustration</h6>
-                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img class="img-fluid" src="img/why.jpg" alt="">
-                    <div class="caption text-center mt-20">
-                        <h6 class="text-uppercase">Vector Illustration</h6>
-                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img class="img-fluid" src="img/why.jpg" alt="">
-                    <div class="caption text-center mt-20">
-                        <h6 class="text-uppercase">Vector Illustration</h6>
-                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img class="img-fluid" src="img/why.jpg" alt="">
-                    <div class="caption text-center mt-20">
-                        <h6 class="text-uppercase">Vector Illustration</h6>
-                        <p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-                    </div>
-                </div>
+
+                @endforeach
             </div>
         </div>
     </div>
@@ -155,78 +132,21 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-60 col-lg-8">
                 <div class="title text-center">
-                    <h1 class="mb-10">Some Features that Made us Unique</h1>
-                    <p>Who are in extremely love with eco friendly system.</p>
+                    <h1 class="mb-10">Категории маршрутов </h1>
+                    <p>Просматривай публикации других по интересующим тебя направлениям.</p>
                 </div>
             </div>
         </div>
         <div class="row">
+            @foreach($categories as $category)
             <div class="col-lg-4 col-md-6 ">
-                <div class="single-feature mb-30">
-                    <div class="title d-flex flex-row pb-20">
-                        <span class="lnr lnr-user"></span>
-                        <h4><a href="#">Expert Technicians</a></h4>
-                    </div>
-                    <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
+                <div class=" mb-30" style="margin-top:40px">
+                  <a href="publish/category/{{$category->id}}"> <img style="height: 180px;width: 400px" src="img/about.jpg" class="img-fluid" alt="">
+                  <p style="margin-top: -95px;text-align:center;color: #fff;font-size:23px" >{{$category->name}}</p></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 ">
-                <div class="single-feature mb-30">
-                    <div class="title d-flex flex-row pb-20">
-                        <span class="lnr lnr-license"></span>
-                        <h4><a href="#">Professional Service</a></h4>
-                    </div>
-                    <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 ">
-                <div class="single-feature mb-30">
-                    <div class="title d-flex flex-row pb-20">
-                        <span class="lnr lnr-phone"></span>
-                        <h4><a href="#">Great Support</a></h4>
-                    </div>
-                    <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 ">
-                <div class="single-feature">
-                    <div class="title d-flex flex-row pb-20">
-                        <span class="lnr lnr-rocket"></span>
-                        <h4><a href="#">Technical Skills</a></h4>
-                    </div>
-                    <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 ">
-                <div class="single-feature">
-                    <div class="title d-flex flex-row pb-20">
-                        <span class="lnr lnr-diamond"></span>
-                        <h4><a href="#">Highly Recomended</a></h4>
-                    </div>
-                    <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 ">
-                <div class="single-feature">
-                    <div class="title d-flex flex-row pb-20">
-                        <span class="lnr lnr-bubble"></span>
-                        <h4><a href="#">Positive Reviews</a></h4>
-                    </div>
-                    <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
-                </div>
-            </div>
+
+@endforeach
         </div>
     </div>
 </section>
