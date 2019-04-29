@@ -15,8 +15,9 @@ class PublishController extends Controller
 
 $publication=Publish::where('category_id',$id)->get();
 $categories=Category::all();
+$c_category=Category::where('id',$id)->first();
 
-return view('publish.pubcategory',compact(["publication","categories"]));
+return view('publish.pubcategory',compact(["publication","categories","c_category"]));
 
 }
 
@@ -24,10 +25,9 @@ public  function detalPublic($id){//метод для перенаправлен
 
         $dpublish=Publish::where('id',$id)->first();
 
-    $ip = $_SERVER['REMOTE_ADDR'];
+$category=Category::where('id',$dpublish->category_id)->first();
 
-
-        return view('publish.detal',compact('dpublish'));
+return view('publish.detal',compact(['dpublish','category']));
 
 
 }

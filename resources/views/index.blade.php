@@ -139,10 +139,10 @@
         </div>
         <div class="row">
             @foreach($categories as $category)
-            <div class="col-lg-4 col-md-6 ">
+            <div class="col-lg-4 col-md-6  blog_l">
                 <div class=" mb-30" style="margin-top:40px">
-                  <a href="publish/category/{{$category->id}}"> <img style="height: 180px;width: 400px" src="img/about.jpg" class="img-fluid" alt="">
-                  <p style="margin-top: -95px;text-align:center;color: #fff;font-size:23px" >{{$category->name}}</p></a>
+                  <a href="publish/category/{{$category->id}}"> <img style="height: 180px;width: 400px" src="img/сategory/{{$category->img_small}}" class="img-fluid" alt="">
+                  <p style="margin-top: -95px;text-align:center;color: #fff;font-size:28px;font-weight: bold;" >{{$category->name}}</p></a>
                 </div>
             </div>
 

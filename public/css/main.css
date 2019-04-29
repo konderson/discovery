@@ -2864,7 +2864,7 @@ margin-top: 50px;
 }
 .blog-div{
 
-  position:relative;margin-top:890px
+  position:relative;margin-top:700px
 }
 .breadcrumb{
   font-size: 18px;
@@ -2891,20 +2891,21 @@ margin-top: 50px;
 
 #share {
   width: 100%;
-  margin: 100px auto;
-  padding-top: 12px;
+ margin-top: 110px;
+    padding-bottom: 20px;
+  padding-top: 25px;
   text-align: center;
 }
 
 /* buttons */
 
 #share a {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
-  margin: 1px;
+  text-align: center;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 10px;
   color: #fff;
   opacity: 0.75;
   transition: opacity 0.15s linear;
@@ -2949,15 +2950,66 @@ margin-top: 50px;
   color:#000;
   text-align: center;
   margin-left: 12px;
-  margin-top: 112px;
+  margin-top: 138px;
+}
+.map-title-adapt{
+display: none;
 }
 .info-block{
- margin-top: 120px;
+ margin-top: 140px;
   text-align: center;
 }
-
+.img-slide{
+    width: 300px;
+    height:200px;
+}
 .gallery-name{
   font-size: 20px;
   border-bottom: 1px solid rgba(164, 188, 182, 0.56);;
 color: #878787;
+}
+
+
+@media (max-width: 760px) {
+.block-info-pub{
+
+
+
+}
+    .img-slide{
+        width: 100px;
+        height:100px;
+    }
+
+    .block-cocial{
+        position: absolute;argin-top: 2px;
+        width: 30%;
+    }
+    #share {
+    margin-top: -32px;
+    }
+    .info-block{
+        margin-top: 0px;
+        text-align: center;
+    }
+}
+@media (max-width: 1000px) {
+   .map-title{
+       display: none;
+   }
+    .map-title-adapt{
+        display: block;
+color: red;
+        font-size: 20px;
+        text-transform: uppercase;
+
+        text-align: center;
+    }
+    #share{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+
+
 }

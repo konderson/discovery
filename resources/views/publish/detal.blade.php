@@ -1,6 +1,6 @@
 @extends('layouts.mainpage')
 @section('content')
-    <div class="container">
+<div class="container">
 <section class="top">
 
 <div class="row">
@@ -8,20 +8,20 @@
 <div class="col-md-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+            <li class="breadcrumb-item"><a href="#">Категория</a></li>
             <li class="breadcrumb-item active" aria-current="page">Data</li>
         </ol>
     </nav>
 
-    <div><p class="category-info" ><span class="name_title">Категория</span> : Природа</p></div>
+    <div><p class="category-info" ><span class="name_title">Категория</span> : {{$category->name}}</p></div>
     <div><p class="title_name">{{$dpublish->title}}</p></div>
 </div>
 
-    <div  class="col-md-2">
+    <div  class="col-md-2 col-sm-4  col-6 block-info-pub ">
         <div class="info-block" >
 
-<div style="text-align: center;color: red;font-weight: bold;float: left;margin-right:60px;">
+<div class="" style="text-align: center;color: red;font-weight: bold;float: left;margin-right:60px;">
 
     <div style=" margin-right:5px;float: left;">
         <img id="likes" style="height: 21px;width: 21px;" src="/img/likes.png">
@@ -39,14 +39,14 @@
                 <img style="height: 18px;width: 23px;" src="/img/view.png">
             </div>
             <div style="float: left;">
-                <p style="font-size:15px;">21</p>
+                <p  id="view" style="font-size:15px;">{{$dpublish->c_view}}</p>
             </div>
         </div>
 
     </div>
 
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-6  col-sm-8 block-cocial" style="padding: 0">
         <div id="share">
 
             <!-- facebook -->
@@ -76,7 +76,7 @@
 
         <section class="content">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-lg-9 blog_r ">
                     <center><div class="slider-for">
 
                             @foreach((\App\Publish::getAllImg($dpublish->img)) as $publ)
@@ -89,38 +89,38 @@
                     <center><p class="gallery-name">Галерея публикация на тему:{{$dpublish->title}}</p></center>
                     <div class="slider-nav">
                         @foreach((\App\Publish::getAllImg($dpublish->img)) as $publ)
-                        <div><img style="width: 300px;height: 200px" src="/img/new/{{$publ}}"></div>
+                        <div><img  class="img-slide"  src="/img/new/{{$publ}}"></div>
                         @endforeach
-                            <div><img style="width: 300px;height: 200px" src="/img/slider2.jpg"></div>
-                        <div><img style="width: 300px;height: 200px" src="/img/slider2.jpg"></div>
-                        <div><img style="width: 300px;height: 200px" src="/img/slider2.jpg"></div>
-                        <div><img style="width: 300px;height: 200px"src="/img/slider3.jpg"></div>
-                        <div><img style="width:300px;height: 200px" src="/img/slider1.jpg"></div>
-                        <div><img style="width:300px;height: 200px" src="/img/slider1.jpg"></div>
+
                     </div>
-                    <div class="text-description">
-{!!$dpublish->descriotion!!}
+                    <div class="text-description" style="height: auto; border:1px solid #2170ee;color:#000;border-radius: 5px;margin-top: 50px;margin-bottom: 50px">
+<span style="text-align: center;padding: 5px">{!!$dpublish->descriotion!!} </span>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-lg-3 blog_l  ">
+                 <div class="rigt_bar">
+                     <div><p class="map-title-adapt" >Объект на карте</p></div>
+                 </div>   <div id="map" style="width: 100%;height: 350px"></div>
 
                 </div>
 
             </div>
         </section>
+<div></div>
+</div>
 
-    </div>
-    @endsection
 <script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
 <script>
     $(document).ready(function(){
+        addView();
         $('.navbar-light').css('background','#000');
         $('.breadcrumb').css('background','#fff');
         $('.slick-current').css('height','80px');
-
+initMap();
         $("#likes").click(function () {
 
            addlikeJS();
@@ -133,13 +133,27 @@
             slidesToScroll: 1,
             arrows: false,
             fade: true,
+            autoplay:true,
+            autoplaySpeed:1200,
             asNavFor: '.slider-nav'
         });
         $('.slider-nav').slick({
             slidesToShow: 4,
+            mobileFirst: true,
             slidesToScroll: 3,
+            autoplay:true,
+            autoplaySpeed:200,
             asNavFor: '.slider-for',
-            focusOnSelect: true
+            focusOnSelect: true,
+            responsive: [
+                {
+
+                    breakpoint: 500,
+                    settings: {
+
+                    }
+                }
+                ]
         });
 
     });
@@ -178,3 +192,90 @@ data=JSON.parse(data.toString());
 
 }
 </script>
+
+
+<script>
+
+    function initMap() {
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [42.3312, 77.0966],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 8
+            });
+            myGeoObject = new ymaps.GeoObject({
+                    // Описание геометрии.
+                    geometry: {
+                        type: "Point",
+                        coordinates: [55.8, 37.8]
+                    },
+                    // Свойства.
+                    properties: {
+                        // Контент метки.
+                        iconContent: 'Я тащусь',
+                        hintContent: 'Ну давай уже тащи'
+                    }
+                });
+            myMap.geoObjects
+                .add(new ymaps.Placemark([{{$dpublish->cordinate1}}, {{$dpublish->cordinate2}} ],{
+                    iconContent: '{{$dpublish->title}}'
+                }, {
+                    preset: 'islands#darkOrangeStretchyIcon'
+
+            }));
+
+
+
+
+        }
+
+
+    }
+</script>
+
+
+    <script>
+        function addView() {//функция асинхроно добовляет количество просмотра
+
+            id='{{$dpublish->id}}';//получаем id публикации
+            var c_view=$("#view").text();//текущие количесто лайков
+
+
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: '{{route('addview')}}',
+                data: {'c_view':c_view,'id':id},
+                success: function (data) {
+                    data=JSON.parse(data.toString());
+                    if (typeof data.error !=="undefined"){
+                        alert(data.error)
+                    }
+                    if (typeof data.c_view !=="undefined"){
+
+                        $("#view").text(data.c_view.toString());
+                    }
+
+
+
+                }
+
+
+
+            });
+        };
+
+    </script>
+@endsection

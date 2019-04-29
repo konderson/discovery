@@ -75,7 +75,7 @@
 
 
 
-             <div style="text-align: center"><input class="btn badge-info" type="submit" value="Создать"> </div>
+             <div style="text-align: center;margin-top: 20px;"><input class="btn badge-info" type="submit" value="Создать"> </div>
          </form>
 </div>
      </div>

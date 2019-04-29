@@ -23,5 +23,6 @@ Route::post('/addroute',"PostController@createPost")->name('addpost');
 Route::get('/publish/category/{id}/','PublishController@getByCategory');
 Route::get('/publish/detal/{id}','PublishController@detalPublic');
 Route::post('/addlike','InfoController@addLike')->name('addlike');
+Route::post('/addview','InfoController@addView')->name('addview');
 
 
