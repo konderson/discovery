@@ -21,17 +21,25 @@
                         <li><a href="/addroute">Создать маршрут</a></li>
                         <li><a href="#about">О проекте</a></li>
 
+
                         <!-- Dropdown -->
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 Маршруты
                             </a>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu" style="background: #3f9ae5">
                                 <a class="dropdown-item" href="generic.html">Регионы</a>
                                 <a class="dropdown-item" href="elements.html">Категории</a>
                                 <a class="dropdown-item" href="elements.html">Лучшие отзывы</a>
                             </div>
                         </li>
+
+                        @if(\Illuminate\Support\Facades\Auth::user())
+                            <li><a href="/logout">Выйти</a></li>
+
+                            @else
+                            <li><a href="/login">Войти</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 @extends('layouts.mainpage')
 @section('content')
+
 <section class="default-banner active-blog-slider">
     <div class="item-slider relative" style="background: url(img/slider1.jpg);background-size: cover;">
         <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
@@ -114,7 +115,7 @@
                         <h6 class="text-uppercase">{{$publ->title}}</h6>
 
                         <p>{{\App\Publish::subDescript($publ->descriotion)}}</p>
-                        <center><a  style="margin-top: 15px"href="#" class="btn btn-primary">Подробнее &rarr;</a></center>
+                        <center><a  style="margin-top: 15px"href="/publish/detal/{{$publ->id}}" class="btn btn-primary">Подробнее &rarr;</a></center>
                     </div>
                 </div>
 

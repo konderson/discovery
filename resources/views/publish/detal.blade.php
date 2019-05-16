@@ -6,13 +6,7 @@
 <div class="row">
 
 <div class="col-md-5">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-            <li class="breadcrumb-item"><a href="#">Категория</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
-    </nav>
+    {{ Breadcrumbs::render('detal',$category, $dpublish) }}
 
     <div><p class="category-info" ><span class="name_title">Категория</span> : {{$category->name}}</p></div>
     <div><p class="title_name">{{$dpublish->title}}</p></div>
@@ -207,24 +201,11 @@ data=JSON.parse(data.toString());
                 // Порядок по умолчанию: «широта, долгота».
                 // Чтобы не определять координаты центра карты вручную,
                 // воспользуйтесь инструментом Определение координат.
-                center: [42.3312, 77.0966],
+                center: [{{$dpublish->cordinate1}}, {{$dpublish->cordinate2}} ],
                 // Уровень масштабирования. Допустимые значения:
                 // от 0 (весь мир) до 19.
                 zoom: 8
             });
-            myGeoObject = new ymaps.GeoObject({
-                    // Описание геометрии.
-                    geometry: {
-                        type: "Point",
-                        coordinates: [55.8, 37.8]
-                    },
-                    // Свойства.
-                    properties: {
-                        // Контент метки.
-                        iconContent: 'Я тащусь',
-                        hintContent: 'Ну давай уже тащи'
-                    }
-                });
             myMap.geoObjects
                 .add(new ymaps.Placemark([{{$dpublish->cordinate1}}, {{$dpublish->cordinate2}} ],{
                     iconContent: '{{$dpublish->title}}'

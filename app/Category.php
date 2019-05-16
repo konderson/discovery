@@ -8,4 +8,9 @@ class Category extends Model
 {
         protected  $table="category";
 
+
+        public  function  publish(){
+            return $this->hasMany(Publish::class);
+        }
+
 }

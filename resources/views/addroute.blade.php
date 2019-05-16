@@ -20,7 +20,7 @@
                  </ul>
              </div>
          @endif
-<div class="form_border" style="background-color: #fff3cd;  opacity: .9; ">
+<div class="form_border" style="background-color: #fff;; ">
 
          <form method="post" enctype="multipart/form-data" action="{{route('addpost')}}">
              {{ csrf_field() }}
@@ -39,15 +39,32 @@
 
 
 <div><h5 class="form-title">Загрузите фотографии которые передадут атмосферу посещаемого вами места </h5></div>
-
-    <div class="box">
+<div class="row" id="upload">
+    <div class="col-md-4">
+    <div style="border: 1px solid #41cbee;margin-top: 8px" class="box">
         <input type="file" name="upload[]" id="file-7" class="inputfile inputfile-6"  multiple />
 
     </div>
-    <div class="box">
+    </div>
+    <div class="col-md-4">
+        <div style="border: 1px solid #41cbee;margin-top: 8px" class="box">
         <input type="file" name="upload[]" id="file-7" class="inputfile inputfile-6"  multiple />
 
     </div>
+    </div>
+    <div class="col-md-4">
+        <div style="border: 1px solid #41cbee;margin-top: 8px" class="box">
+            <input type="file" name="upload[]" id="file-7" class="inputfile inputfile-6"  multiple />
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <img id="addbtn" style="width: 20px;height: 20px;margin-top: 12px" src="/img/add.png">
+        <p>Добавить еще</p>
+    </div>
+
+</div>
+
 
 
 
@@ -67,7 +84,7 @@
         <h5 class="form-title" style="opacity: 9;color: #000">Укажите стоимость мпршрута(!Не обязательно)</h5>
         <input type="text" id="cost" style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7;margin-bottom: 12px;">
     </div>
-    <div id="map" style="width: 600px; height: 400px"></div>
+    <div id="map" style="width: 100%; height: 400px"></div>
 
 </div>
 <input id="cordinata1" type="text" name="cordinata1">
@@ -84,17 +101,29 @@
 
 
 
-    @endsection
+
 
 </div>
-
+@endsection
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+
 
 <script src="//cdn.ckeditor.com/4.11.4/basic/ckeditor.js"></script>
 <script>
     $(document).ready(function() { //скрипт ld
         CKEDITOR.replace('editor1');
 
+
+
+
+
+$('#addbtn').click( function () {
+    addBtn();
+
+});
 
 
         // Функция ymaps.ready() будет вызвана, когда
@@ -122,8 +151,8 @@
                     var coords = e.get('coords');
                     myMap.balloon.open(coords, {
                         contentHeader:'Событие!',
-                        contentBody:'<p>Кто-то щелкнул по карте4.</p>' +
-                            '<p>Координаты щелчка: ' + [
+                        contentBody:'<p>Точка выброна на карте.</p>' +
+                            '<p>Координаты: ' + [
                                 coords[0].toPrecision(6),
                                 coords[1].toPrecision(6)
                             ].join(', ') + '</p>',
@@ -158,3 +187,16 @@
 
 </script>
 
+<script>
+
+    function addBtn(){
+
+        var newElems = $("<div class='col-md-4 '><div style='border: 1px solid #41cbee ;margin-top: 8px' class='box'>")
+            .append("<input type='file' name='upload[]' id='file-7' class='inputfile inputfile-6'  /></div>")
+
+
+
+        $('#upload').prepend(newElems);
+
+    };
+</script>

@@ -60,6 +60,7 @@
 <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
 <script src="{{asset('js/waypoints.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
+<script src="{{asset('js/parallax.js')}}"></script>
 
 
 </body>

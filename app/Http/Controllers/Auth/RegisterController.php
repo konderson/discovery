@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Person;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -63,10 +64,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user=new User();
+        $user->name=$data['name'];
+        $user->email=$data['email'];
+
+        $user->password=Hash::make($data['password']);
+        $user->save();
+$person=new Person();
+$person->name=$data['name'];
+$person->bday=$data['bday'];
+$person->address=$data['address'];
+$person->phone=$data['phone'];
+        $person->user()->associate($user);
+ $person->save();
+return $user;
+       /* return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+        ]);*/
     }
 }

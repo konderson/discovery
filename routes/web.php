@@ -14,14 +14,17 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/','MainController@index');
+
+Route::get('/','MainController@index')->name('home');
+Route::get('/logout','HomeController@logout')->name('logout');
 
 Route::get('/addroute',"PostController@index");
 Route::post('/addroute',"PostController@createPost")->name('addpost');
 
-Route::get('/publish/category/{id}/','PublishController@getByCategory');
-Route::get('/publish/detal/{id}','PublishController@detalPublic');
+Route::get('/publish/category/{id}/','PublishController@getByCategory')->name('category');
+Route::get('/ajax/publish','PublishController@getByCategoryAjax');
+
+Route::get('/publish/detal/{id}','PublishController@detalPublic')->name('publish');
 Route::post('/addlike','InfoController@addLike')->name('addlike');
 Route::post('/addview','InfoController@addView')->name('addview');
 

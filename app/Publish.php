@@ -23,4 +23,10 @@ return $array;
         $str = $str . "...";
         echo $str;
     }
+
+
+public  function  category(){
+       return $this->belongsTo(Category::class);
+}
+
 }
