@@ -25,6 +25,7 @@ class CreatePublish extends Migration
             $table->integer('cordinate1')->nullable();
             $table->integer('cordinate2')->nullable();
             $table->text('descriotion')->nullable();
+            $table->boolean('iscecked')->nullable();
             $table->string('img')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  margin-top: -150px;
   height: auto;">
 
 
@@ -26,11 +27,11 @@
              {{ csrf_field() }}
              <div class="">
                  <h5 class="form-title" style="opacity: 9;color: #000">Название публикации вашей точки</h5>
-                 <input type="text" id="name" name="name" style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7 ">
+                 <input class="form-control" type="text" id="name" name="name" style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7 ">
              </div>
              <div >
                  <h5 class="form-title" style="opacity: 9;color: #000">Опешите подробней место которое вы хотите порекомендовать другим</h5>
-                 <div style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7 "> <textarea  id="editor1" name="description" cols="80"   style="border: 1px solid #3df;border-radius: 5px;opacity: 0.7 " rows="10"></textarea>
+                 <div style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7 "> <textarea class="form-control"  id="editor1" name="description" cols="80"   style="border: 1px solid #3df;border-radius: 5px;opacity: 0.7 " rows="10"></textarea>
         </textarea>
                  </div>
              </div>
@@ -39,26 +40,26 @@
 
 
 <div><h5 class="form-title">Загрузите фотографии которые передадут атмосферу посещаемого вами места </h5></div>
-<div class="row" id="upload">
-    <div class="col-md-4">
-    <div style="border: 1px solid #41cbee;margin-top: 8px" class="box">
-        <input type="file" name="upload[]" id="file-7" class="inputfile inputfile-6"  multiple />
+<div class="row" id="upload" style="border: 1px solid #41cbee;width: 80%">
+    <div class="col-md-4" style="overflow: hidden;margin-top: 8px;">
+    <div style="" class="box">
+        <input type="file" name="upload[]" id="file-7" class=""  multiple />
 
     </div>
     </div>
-    <div class="col-md-4">
-        <div style="border: 1px solid #41cbee;margin-top: 8px" class="box">
-        <input type="file" name="upload[]" id="file-7" class="inputfile inputfile-6"  multiple />
+    <div class="col-md-4" style="overflow: hidden;margin-top: 8px;">
+        <div class="box">
+        <input type="file" name="upload[]" id="file-7" class=""  multiple />
 
     </div>
     </div>
-    <div class="col-md-4">
-        <div style="border: 1px solid #41cbee;margin-top: 8px" class="box">
-            <input type="file" name="upload[]" id="file-7" class="inputfile inputfile-6"  multiple />
+    <div class="col-md-4" style="overflow: hidden;margin-top: 8px;">
+        <div  class="box">
+            <input type="file" name="upload[]" id="file-7" class=""  multiple />
 
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4"style="overflow: hidden;margin-top: 8px;">
         <img id="addbtn" style="width: 20px;height: 20px;margin-top: 12px" src="/img/add.png">
         <p>Добавить еще</p>
     </div>
@@ -68,31 +69,46 @@
 
 
 
-<div>
+<div style="margin-top: 15px">
 
     <div><h5 class="form-title">Выбирите категорию</h5></div>
-    <select id="category" name="category" placeholder="Сервис"  >
+    <div class="pure-css-select-style theme-filled">
+    <select  id="category"  name="category" style="width: 300px;"  >
         @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
 
             @endforeach
 
     </select>
-
-</div>
-    <div class="">
-        <h5 class="form-title" style="opacity: 9;color: #000">Укажите стоимость мпршрута(!Не обязательно)</h5>
-        <input type="text" id="cost" style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7;margin-bottom: 12px;">
     </div>
+</div>
+    <div style="padding-top: 20px">
+        <h5 class="form-title" style="opacity: 9;color: #000">Укажите стоимость мпршрута(!Не обязательно)</h5>
+        <input class="form-control" type="text" id="cost" style="border: 1px solid #3df;border-radius: 5px;padding: 2px;opacity: 0.7;margin-bottom: 12px;">
+    </div>
+    <h5 class="form-title" style="opacity: 9;color: #000">Укажите ваш маршрут на карте</h5>
     <div id="map" style="width: 100%; height: 400px"></div>
 
 </div>
-<input id="cordinata1" type="text" name="cordinata1">
-             <input id="cordinata2" name="cordinata2" type="text">
+             <div class="row">
+
+              <div class="col-md-6 " style="float: right">
+
+                  <input id="cordinata1" type="text" name="cordinata1">
+                  <p>Кордината A</p>
+              </div>
+
+                 <div class="col-md-6" style="float: left">
+                     <input id="cordinata2" name="cordinata2" type="text">
+                     <p>Кордината B</p>
+                 </div>
+
+             </div>
 
 
 
-             <div style="text-align: center;margin-top: 20px;"><input class="btn badge-info" type="submit" value="Создать"> </div>
+
+             <div style="text-align: center;margin-top: 20px;"><input class="btn badge-info" style="width: 190px" type="submit" value="Создать"> </div>
          </form>
 </div>
      </div>
@@ -191,8 +207,8 @@ $('#addbtn').click( function () {
 
     function addBtn(){
 
-        var newElems = $("<div class='col-md-4 '><div style='border: 1px solid #41cbee ;margin-top: 8px' class='box'>")
-            .append("<input type='file' name='upload[]' id='file-7' class='inputfile inputfile-6'  /></div>")
+        var newElems = $("<div class='col-md-4 ' style='overflow: hidden;margin-top: 8px;'><div style=' '>")
+            .append("<input type='file' name='upload[]'  class=''  /></div>")
 
 
 

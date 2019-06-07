@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Laravel\Scout\Searchable;
 class Publish extends Model
 {
+
+    use Searchable;
     protected $table = "publish";
 
    static public function getImg($img)

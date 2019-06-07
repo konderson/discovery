@@ -115,7 +115,7 @@
                         <h6 class="text-uppercase">{{$publ->title}}</h6>
 
                         <p>{{\App\Publish::subDescript($publ->descriotion)}}</p>
-                        <center><a  style="margin-top: 15px"href="/publish/detal/{{$publ->id}}" class="btn btn-primary">Подробнее &rarr;</a></center>
+                        <center><a  style="margin-top: 15px"href="/publish/detal/{{$publ->id}}" class="btn btn-primary">Подробнее</a></center>
                     </div>
                 </div>
 
@@ -185,59 +185,62 @@
 
 
 <!-- Start faq Area -->
-<section class="faq-area section-gap" id="faq">
+<section class="faq-area section-gap" id="faq"   style="background: url(img/bg_route.jpg); background-size: cover;  background-position: left; /* Положение фона */;   /* Положение фона */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;">>
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-60 col-lg-8">
                 <div class="title text-center">
-                    <h1 class="mb-10">Frequently Asked Questions</h1>
-                    <p>Who are in extremely love with eco friendly system.</p>
+                    <h1 class="mb-10">Немного статистики проекта</h1>
+
                 </div>
             </div>
         </div>
         <div class="row d-flex align-items-center">
             <div class="counter-left col-lg-3 col-md-3">
                 <div class="single-facts">
-                    <h2 class="counter">5962</h2>
-                    <p>Projects Completed</p>
+                    <h2 class="counter">27</h2>
+
                 </div>
                 <div class="single-facts">
                     <h2 class="counter">2394</h2>
-                    <p>New Projects</p>
+
                 </div>
                 <div class="single-facts">
-                    <h2 class="counter">1439</h2>
-                    <p>Tickets Submitted</p>
-                </div>
+                    <h2 class="counter">5</h2>
+</div>
                 <div class="single-facts">
                     <h2 class="counter">933</h2>
-                    <p>Cup of Coffee</p>
+
                 </div>
             </div>
             <div class="faq-content col-lg-9 col-md-9">
-                <div class="single-faq">
+                <div class="single-faq" style="margin-top: 50px">
                     <h2 class="text-uppercase">
-                        Are your Templates responsive?
+                        Количество маршрутов и статей
                     </h2>
-                    <p>
-                        “Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
-                    </p>
+
                 </div>
-                <div class="single-faq">
+                <div class="single-faq" style="margin-top: 50px">
                     <h2 class="text-uppercase">
-                        Does it have all the plugin as mentioned?
+                        Пользователей использующих наш сайт
                     </h2>
-                    <p>
-                        “Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
-                    </p>
+
                 </div>
-                <div class="single-faq">
+                <div class="single-faq" style="margin-top: 70px">
                     <h2 class="text-uppercase">
-                        Can i use the these theme for my client?
+                      Посетивших сегодня сайт
                     </h2>
-                    <p>
-                        “Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
-                    </p>
+
+                </div>
+                <div class="single-faq"style="margin-top: 70px">
+                    <h2 class="text-uppercase">
+                        Количество прошедших по маршрутам сайта
+                    </h2>
+
                 </div>
             </div>
         </div>
@@ -246,20 +249,6 @@
 <!-- End faq Area -->
 
 
-<!-- Start Video Area -->
-<section class="video-area pt-40 pb-40">
-    <div class="overlay overlay-bg"></div>
-    <div class="container">
-        <div class="video-content">
-            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="play-btn"><img src="img/play-btn.png" alt=""></a>
-            <div class="video-desc">
-                <h3 class="h2 text-white text-uppercase">Being unique is the preference</h3>
-                <h4 class="text-white">Youtube video will appear in popover</h4>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Start Video Area -->
 
 
 <!-- Start logo Area -->

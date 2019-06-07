@@ -5,11 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
+    use EntrustUserTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -40,5 +42,10 @@ class User extends Authenticatable
 
     public function  person(){
         return $this->hasOne(Person::class );
+    }
+   static public  function  getName(){
+$id=Auth::id();
+        return Person::select('name')->where('user_id',$id)->first();
+
     }
 }

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Publish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
     public function index(){
+
         $categories=Category::all();
 $publication=Publish::orderBy('id', 'DESC')->limit(5)->get();
 

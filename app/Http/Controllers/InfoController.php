@@ -50,4 +50,8 @@ if(DB::table('ip_view')->where(['ip'=>$ip,'publish_id'=>$id,])->count()>0){
 
 
    }
+
+
+
+
 }

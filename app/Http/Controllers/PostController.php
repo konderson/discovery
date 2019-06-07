@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ $category=$request->category;
             DB::table('publish')->insert(
                 [
                     'title'=>$title,
+                    'author_id'=>Auth::id(),
                     'descriotion'=>$description,
                     'cordinate1'=>$cordinate1,
                     'cordinate2'=>$cordinate2,
@@ -58,6 +60,7 @@ $category=$request->category;
                     'date'=> $date,
                     'category_id'=>$category,
                     'coast'=>$coast,
+                    'ischecked'=>'0'
 
                 ]
             );
@@ -69,6 +72,6 @@ $category=$request->category;
             return back()->with('bad',"Ошибка!фаил не коректен ");
         }
 
-
+return redirect('/');
     }
 }

@@ -50,4 +50,12 @@ return view('publish.detal',compact(['dpublish','category']));
 static public function new(){
         return view('new');
 }
+
+public  function getPopular(){
+     $popular=Publish::orderBy('c_view','desc')->limit(5)->get();
+     $popular=json_encode($popular);
+     print_r(count( $popular));die;
+
+     return $popular;
+}
 }

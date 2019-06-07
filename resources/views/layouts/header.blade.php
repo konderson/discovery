@@ -35,7 +35,19 @@
                         </li>
 
                         @if(\Illuminate\Support\Facades\Auth::user())
-                            <li><a href="/logout">Выйти</a></li>
+                            <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                {{\App\User::getName()->name}}
+                            </a>
+                            <div class="dropdown-menu" style="background: #393949">
+                                <a class="dropdown-item" href="generic.html"> <img width="20px" height="20px" src="/img/elements/write.png">Мои публикации</a>
+                                <a class="dropdown-item" href="elements.html"><img width="20px" height="20px" src="/img/elements/setting.png">Личный кабинет</a>
+                                <a class="dropdown-item" href="elements.html"><img width="22px" height="20px" src="/img/elements/message.png">Опавещание</a>
+                                <a href="/logout"><img style="padding-right:5px " width="28px" height="20px" src="/img/elements/logout.png">Выйти</a>
+
+                            </div>
+                </li>
+
 
                             @else
                             <li><a href="/login">Войти</a></li>

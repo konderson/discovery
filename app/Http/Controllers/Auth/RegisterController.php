@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\DB;
 class RegisterController extends Controller
 {
     /*
@@ -77,6 +77,9 @@ $person->address=$data['address'];
 $person->phone=$data['phone'];
         $person->user()->associate($user);
  $person->save();
+ DB::table('role_user')->insert(array('user_id'=>$person->getAttribute('user_id'),'role_id'=>3));//для всех default роль 3 -> user
+
+
 return $user;
        /* return User::create([
             'name' => $data['name'],
