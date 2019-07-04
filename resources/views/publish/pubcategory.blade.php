@@ -3,6 +3,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/route.js') }}" defer></script>
 <section class="category_img"  style=" position: absolute;  background-position: left; /* Положение фона */;   /* Положение фона */
   top: 0;
   left: 0;
